@@ -29,6 +29,10 @@ packages.each do |pack|
 end
 
 # AWS configuration
+directory "#{ENV['HOME']}/.aws" do
+  action :create
+end
+
 template "#{ENV['HOME']}/.aws/config" do
   source "config.erb"
 end
@@ -39,6 +43,12 @@ end
 
 execute "Install AWS-Cli" do
   command "pip install awscli"
+  action :run
+end
+
+# RVM install
+execute "Install RVM" do
+  command "\curl -sSL https://get.rvm.io | bash -s stable --ruby"
   action :run
 end
 

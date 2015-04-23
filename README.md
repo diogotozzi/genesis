@@ -6,10 +6,10 @@ This is a Chef Repository that configures a development desktop machine.
 Install
 =============
 
-First install the RVM
+First install the Chef
 
-`\curl -sSL https://get.rvm.io | bash -s stable --ruby`
+`curl -L https://www.chef.io/chef/install.sh | sudo bash`
 
 Then run the Chef cookbook
 
-`chef-solo -c solo.rb -j solo.json`
+`sudo chef-solo -c solo.rb -j solo.json`
