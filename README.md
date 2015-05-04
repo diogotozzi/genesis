@@ -12,7 +12,7 @@ First install the Chef
 
 Set the user and group attributes
 
-`cookbooks/desktop/attributes/default.br`
+`cookbooks/desktop/attributes/default.rb`
 
 Then run the Chef cookbook
 
