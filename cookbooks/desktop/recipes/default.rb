@@ -30,24 +30,24 @@ end
 
 # AWS configuration
 directory "#{ENV['HOME']}/.aws" do
-  owner node['etc']['passwd']['user']
-  group node['etc']['passwd']['group']
-  mode '0777'
+  owner "#{node["user"]}"
+  group "#{node["group"]}"
+  mode '0775'
   action :create
 end
 
 template "#{ENV['HOME']}/.aws/config" do
   source "config.erb"
-  owner node['etc']['passwd']['user']
-  group node['etc']['passwd']['group']
-  mode '0777'
+  owner "#{node["user"]}"
+  group "#{node["group"]}"
+  mode '0775'
 end
 
 template "#{ENV['HOME']}/.aws/credentials" do
   source "credentials.erb"
-  owner node['etc']['passwd']['user']
-  group node['etc']['passwd']['group']
-  mode '0777'
+  owner "#{node["user"]}"
+  group "#{node["group"]}"
+  mode '0775'
 end
 
 execute "Install AWS-Cli" do
@@ -55,7 +55,7 @@ execute "Install AWS-Cli" do
   action :run
 end
 
-# RVM install
+# RVM
 execute "Install RVM" do
   command "curl -sSL https://get.rvm.io | bash -s stable --ruby"
   action :run
@@ -72,13 +72,13 @@ execute "Install Gems" do
   action :run
 end
 
-# VagrantUp Install
+# VagrantUp
 execute "Install VagrantUp" do
   command "wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb && dpkg -i vagrant_1.7.2_x86_64.deb"
   action :run
 end
 
-# VirtualBox Install
+# VirtualBox
 execute "Install VirtualBox" do
   command "wget http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb && dpkg -i virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb"
   action :run
