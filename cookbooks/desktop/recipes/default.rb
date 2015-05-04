@@ -7,6 +7,7 @@
 
 packages = [
   # Basic packages
+  "aptitude",
   "build-essential",
   "curl",
   "dkms",
