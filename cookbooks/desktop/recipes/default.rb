@@ -84,3 +84,9 @@ execute "Install VirtualBox" do
   command "wget http://download.virtualbox.org/virtualbox/4.3.26/virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb && dpkg -i virtualbox-4.3_4.3.26-98988~Ubuntu~raring_amd64.deb"
   action :run
 end
+
+# MySQL Workbench
+execute "Install MySQL Workbench" do
+  command "wget http://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.3-1ubu1410-amd64.deb && dpkg -i mysql-workbench-community-6.3.3-1ubu1410-amd64.deb"
+  action :run
+end
