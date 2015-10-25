@@ -65,6 +65,9 @@ end
 # Git configuration
 template "#{ENV['HOME']}/.gitconfig" do
   source "gitconfig.erb"
+  owner "#{node["user"]}"
+  group "#{node["group"]}"
+  mode '0775'
 end
 
 # Ruby Gems
