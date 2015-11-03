@@ -52,12 +52,14 @@ template "#{ENV['HOME']}/.aws/credentials" do
 end
 
 execute "Install AWS-Cli" do
+  user "#{node["user"]}"
   command "pip install awscli"
   action :run
 end
 
 # RVM
 execute "Install RVM" do
+  user "#{node["user"]}"
   command "curl -sSL https://get.rvm.io | bash -s stable --ruby"
   action :run
 end
@@ -72,6 +74,7 @@ end
 
 # Ruby Gems
 execute "Install Gems" do
+  user "#{node["user"]}"
   command "gem install --no-ri --no-rdoc bundler capistrano capistrano-ec2_tagged capistrano-symfony chef knife-ec2"
   action :run
 end
