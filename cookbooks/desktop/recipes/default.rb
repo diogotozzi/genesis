@@ -7,6 +7,7 @@
 
 packages = [
   # Basic packages
+  "gawk",
   "aptitude",
   "build-essential",
   "curl",
