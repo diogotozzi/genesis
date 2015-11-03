@@ -7,10 +7,10 @@ default['rvm']['user_installs'] = [
   }
 ]
 default['rvm']['user_global_gems'] = [
-  { 'user' => 'bundler'},
-  { 'user' => 'capistrano'},
-  { 'user' => 'capistrano-ec2_tagged'},
-  { 'user' => 'capistrano-symfony'},
-  { 'user' => 'chef'},
-  { 'user' => 'knife-ec2'}
+  { 'name' => 'bundler'},
+  { 'name' => 'capistrano'},
+  { 'name' => 'capistrano-ec2_tagged'},
+  { 'name' => 'capistrano-symfony'},
+  { 'name' => 'chef'},
+  { 'name' => 'knife-ec2'}
 ]
