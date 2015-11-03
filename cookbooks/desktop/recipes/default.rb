@@ -51,19 +51,6 @@ template "#{ENV['HOME']}/.aws/credentials" do
   mode '0775'
 end
 
-execute "Install AWS-Cli" do
-  user "#{node["user"]}"
-  command "pip install awscli"
-  action :run
-end
-
-# RVM
-execute "Install RVM" do
-  user "#{node["user"]}"
-  command "curl -sSL https://get.rvm.io | bash -s stable --ruby"
-  action :run
-end
-
 # Git configuration
 template "#{ENV['HOME']}/.gitconfig" do
   source "gitconfig.erb"
@@ -72,10 +59,9 @@ template "#{ENV['HOME']}/.gitconfig" do
   mode '0775'
 end
 
-# Ruby Gems
-execute "Install Gems" do
+execute "Install AWS-Cli" do
   user "#{node["user"]}"
-  command "gem install --no-ri --no-rdoc bundler capistrano capistrano-ec2_tagged capistrano-symfony chef knife-ec2"
+  command "pip install awscli"
   action :run
 end
 
