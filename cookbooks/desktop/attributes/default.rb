@@ -1,7 +1,7 @@
-default["user"] = ""
-default["group"] = ""
+default["user"] = "" #required
+default["group"] = "" #required
 default["rvm"]["user_installs"] = [
-  { "user" => "",
+  { "user" => "", #required
     "default_ruby" => "2.2.1",
     "rubies" => []
   }
