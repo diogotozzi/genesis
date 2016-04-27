@@ -10,6 +10,7 @@ packages = [
   "gawk",
   "aptitude",
   "build-essential",
+  "libgmp-dev",
   "curl",
   "dkms",
   "git",
