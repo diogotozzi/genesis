@@ -6,9 +6,13 @@ This is a Chef Repository that configures a development desktop machine.
 Install
 =============
 
-First install the Chef
+First, install the Chef
 
 `curl -L https://www.chef.io/chef/install.sh | sudo bash`
+
+Set the Profile Preferences at Terminal window
+
+`Run command as a login shell`
 
 Set the user and group attributes
 
