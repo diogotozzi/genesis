@@ -31,6 +31,12 @@ packages.each do |pack|
   package pack
 end
 
+# Set clock at Ubuntu from UTC to Local Time
+execute "Set Ubuntu clock to UTC" do
+  command "timedatectl set-local-rtc 1"
+  action :run
+end
+
 # AWS configuration
 directory "#{ENV['HOME']}/.aws" do
   owner "#{node["user"]}"
